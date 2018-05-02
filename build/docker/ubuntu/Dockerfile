@@ -165,7 +165,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN gem install bundler --no-ri --no-rdoc
 
 # Python optional dependencies
-RUN pip2 install -U ipaddress backports.ssl_match_hostname tornado
+RUN pip2 install -U ipaddress backports.ssl_match_hostname tornado==4.5.3
 RUN pip3 install -U backports.ssl_match_hostname tornado
 
 # Go
