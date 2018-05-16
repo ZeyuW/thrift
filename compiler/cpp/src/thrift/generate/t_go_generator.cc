@@ -1442,7 +1442,7 @@ void t_go_generator::generate_countsetfields_helper(ofstream& out,
 
     t_type* type = (*f_iter)->get_type()->get_true_type();
 
-    if (!(is_pointer_field(*f_iter) || type->is_map() || type->is_set() || type->is_list()))
+    if (!(is_pointer_field(*f_iter) || type->is_map() || type->is_set() || type->is_list() || (type->is_binary() && !(*f_iter)->get_value()) ))
       continue;
 
     const string field_name(publicize(escape_string((*f_iter)->get_name())));
